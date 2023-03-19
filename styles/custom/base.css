@@ -1,0 +1,12 @@
+@layer base {
+    a {
+        @apply in-out-smooth;
+
+        &:focus,
+        &:hover {
+            @apply opacity-50;
+
+            @apply outline-0;
+        }
+    }
+}

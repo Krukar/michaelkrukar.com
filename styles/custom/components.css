@@ -1,0 +1,12 @@
+@layer components {
+    .link {
+        @apply h-8;
+        @apply sm:h-9;
+
+        @apply w-1/2;
+        @apply sm:w-1/4;
+
+        @apply flex;
+        @apply justify-center;
+    }
+}
