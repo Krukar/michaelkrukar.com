@@ -1,12 +1,6 @@
 @layer base {
-    a {
+    a,
+    button {
         @apply in-out-smooth;
-
-        &:focus,
-        &:hover {
-            @apply opacity-50;
-
-            @apply outline-0;
-        }
     }
 }

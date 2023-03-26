@@ -8,5 +8,9 @@
 
         @apply flex;
         @apply justify-center;
+
+        @apply text-krukar;
+
+        @apply white-link;
     }
 }

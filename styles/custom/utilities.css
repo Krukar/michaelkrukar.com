@@ -10,4 +10,11 @@
 
         @apply cubic;
     }
+
+    .white-link {
+        &:focus,
+        &:hover {
+            @apply text-white;
+        }
+    }
 }

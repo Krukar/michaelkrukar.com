@@ -1,10 +1,17 @@
 /** @type {import('tailwindcss').Config} */
+
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
     content: ["./pages/**/*.{js,ts,jsx,tsx}", "./app/**/*.{js,ts,jsx,tsx}"],
     darkMode: "class",
     theme: {
+        extend: {
+            colors: {
+                dark: "#171717", // neutral-900
+                krukar: "#EA002A",
+            },
+        },
         spacing: {
             0: "0px",
             1: "1px",
