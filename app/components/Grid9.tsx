@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 
 const Component = () => {
-    const audio = useRef<HTMLAudioElement>(new Audio("/sample.mp3"));
+    const audio = useRef<HTMLAudioElement>(new Audio("/low_light.mp3"));
     const analyser = useRef<AnalyserNode | null>(null);
     const canvas = useRef<HTMLCanvasElement>(null);
     const canvas_context = useRef<CanvasRenderingContext2D | null>(null);
     const data = useRef<Uint8Array | null>(null);
     const frame = useRef<number>(0);
+    const max = useRef<number>(0);
+
     const [play, set_play] = useState<boolean>(false);
 
     useEffect(() => {
@@ -30,7 +32,7 @@ const Component = () => {
                 source.connect(analyser.current);
                 analyser.current.connect(context.destination);
 
-                analyser.current.fftSize = 512;
+                analyser.current.fftSize = 256;
                 analyser.current.smoothingTimeConstant = 0.85;
 
                 data.current = new Uint8Array(analyser.current.frequencyBinCount);
@@ -62,20 +64,23 @@ const Component = () => {
 
         canvas_context.current.beginPath();
         canvas_context.current.lineWidth = 5;
-        canvas_context.current.lineCap = "round";
         canvas_context.current.strokeStyle = "white";
-        canvas_context.current.moveTo(0, canvas.current.height / 2);
+        canvas_context.current.moveTo(0, canvas.current.height);
 
         for (let i = 0; i < analyser.current.frequencyBinCount; i++) {
-            const y = -data.current[i];
+            const y = data.current[i];
 
-            x += (canvas.current.width / analyser.current.frequencyBinCount) * 4;
+            canvas_context.current.lineTo(x, y + canvas.current.width / 4);
 
-            canvas_context.current.lineTo(x, y * 2 + canvas.current.height / 2);
+            x += max.current / analyser.current.frequencyBinCount;
+
+            // if (y > max.current) max.current = y;
+
+            // x += (max.current / analyser.current.frequencyBinCount) * (canvas.current.width / max.current) * 2;
         }
 
         canvas_context.current.stroke();
-        canvas_context.current.closePath();
+        canvas_context.current.closePath(); // Close the current path.
     };
 
     const handle_click = () => set_play(!play);

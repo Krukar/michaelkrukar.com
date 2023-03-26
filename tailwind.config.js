@@ -5,19 +5,6 @@ module.exports = {
     content: ["./pages/**/*.{js,ts,jsx,tsx}", "./app/**/*.{js,ts,jsx,tsx}"],
     darkMode: "class",
     theme: {
-        extend: {
-            colors: {
-                pink: "#FF3399",
-            },
-        },
-        fontFamily: {
-            body: ["Mona Sans"],
-            heading: ["Racing Sans One", "cursive"],
-        },
-        screens: {
-            xs: "460px",
-            ...defaultTheme.screens,
-        },
         spacing: {
             0: "0px",
             1: "1px",

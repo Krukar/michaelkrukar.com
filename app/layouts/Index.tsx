@@ -11,7 +11,7 @@ const Grid = dynamic(() => import("@Components/Grid"), {
 
 const Layout = () => (
     <div>
-        <div className="h-screen bg-stone-900">
+        <div className="h-screen bg-neutral-900">
             <Grid />
         </div>
 
