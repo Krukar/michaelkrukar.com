@@ -11,10 +11,10 @@
         @apply cubic;
     }
 
-    .white-link {
-        &:focus,
-        &:hover {
-            @apply text-white;
-        }
+    .link--fade {
+        @apply opacity-50;
+
+        @apply focus:opacity-100;
+        @apply hover:opacity-100;
     }
 }

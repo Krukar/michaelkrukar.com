@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
@@ -10,7 +9,12 @@ module.exports = {
             colors: {
                 dark: "#171717", // neutral-900
                 krukar: "#EA002A",
+                light: "#FAFAFA", // neutral-50
             },
+        },
+        screens: {
+            xs: "460px",
+            ...defaultTheme.screens,
         },
         spacing: {
             0: "0px",

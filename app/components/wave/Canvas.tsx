@@ -1,21 +1,27 @@
 import { useEffect, useRef } from "react";
 
-const Component = ({ audio, play }: { audio: HTMLAudioElement; play: boolean }) => {
-    // TODO: Clean this up: What can go in the state?
-    const analyser = useRef<AnalyserNode | null>(null);
+const debounce = (func: Function, delay: number) => {
+    let timer_id: number;
+
+    return () => {
+        clearTimeout(timer_id);
+
+        timer_id = setTimeout(func, delay);
+    };
+};
+
+const Component = ({ analyser, data, play }: { analyser: AnalyserNode; data: Float32Array; play: boolean }) => {
     const canvas = useRef<HTMLCanvasElement>(null);
     const canvas_context = useRef<CanvasRenderingContext2D | null>(null);
-    const data = useRef<Float32Array | null>(null);
     const frame = useRef<number>(0);
 
     useEffect(() => {
-        // Prevent additional paints
-        if (!canvas.current || canvas_context.current) return;
+        if (!canvas.current) return;
+
+        canvas_context.current = canvas.current.getContext("2d");
 
         canvas.current.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         canvas.current.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-
-        canvas_context.current = canvas.current.getContext("2d");
 
         window.addEventListener("resize", handle_resize);
 
@@ -23,34 +29,7 @@ const Component = ({ audio, play }: { audio: HTMLAudioElement; play: boolean }) 
     }, []);
 
     useEffect(() => {
-        document.activeElement instanceof HTMLElement && document.activeElement.blur();
-
-        if (play) {
-            // init
-            if (!analyser.current) {
-                const context = new AudioContext();
-                const source = context.createMediaElementSource(audio);
-                analyser.current = context.createAnalyser();
-
-                source.connect(analyser.current);
-                analyser.current.connect(context.destination);
-
-                analyser.current.fftSize = 1024;
-                analyser.current.smoothingTimeConstant = 0.95;
-
-                data.current = new Float32Array(analyser.current.frequencyBinCount);
-
-                audio.loop = true;
-            }
-
-            audio.play();
-
-            frame.current = requestAnimationFrame(animate);
-        } else {
-            audio.pause();
-
-            cancelAnimationFrame(frame.current);
-        }
+        play ? (frame.current = requestAnimationFrame(animate)) : cancelAnimationFrame(frame.current);
 
         return () => cancelAnimationFrame(frame.current);
     }, [play]);
@@ -60,9 +39,9 @@ const Component = ({ audio, play }: { audio: HTMLAudioElement; play: boolean }) 
 
         let x = 0;
 
-        if (!analyser.current || !canvas.current || !canvas_context.current || !data.current) return;
+        if (!canvas.current || !canvas_context.current) return;
 
-        analyser.current.getFloatFrequencyData(data.current);
+        analyser.getFloatFrequencyData(data);
 
         canvas_context.current.fillStyle = "#171717";
         canvas_context.current.fillRect(0, 0, canvas.current.width, canvas.current.height);
@@ -73,10 +52,10 @@ const Component = ({ audio, play }: { audio: HTMLAudioElement; play: boolean }) 
         canvas_context.current.strokeStyle = "#EA002A";
         canvas_context.current.moveTo(0, 0);
 
-        for (let i = 0; i < analyser.current.frequencyBinCount; i++) {
-            const y = -data.current[i] * 4;
+        for (let i = 0; i < analyser.frequencyBinCount; i++) {
+            const y = -data[i] * 4;
 
-            x += canvas.current.width / analyser.current.frequencyBinCount;
+            x += canvas.current.width / analyser.frequencyBinCount;
 
             canvas_context.current.lineTo(x, y);
         }
@@ -85,12 +64,12 @@ const Component = ({ audio, play }: { audio: HTMLAudioElement; play: boolean }) 
         canvas_context.current.closePath();
     };
 
-    const handle_resize = () => {
+    const handle_resize = debounce(() => {
         if (!canvas.current) return;
 
         canvas.current.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         canvas.current.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    };
+    }, 100);
 
     return <canvas ref={canvas} />;
 };

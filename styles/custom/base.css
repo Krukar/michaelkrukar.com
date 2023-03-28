@@ -1,6 +1,9 @@
 @layer base {
     a,
     button {
+        @apply link--fade;
         @apply in-out-smooth;
+
+        @apply text-krukar;
     }
 }

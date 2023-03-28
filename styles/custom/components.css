@@ -1,16 +1,9 @@
 @layer components {
-    .link {
-        @apply h-8;
-        @apply sm:h-9;
+    .social-link {
+        @apply h-7;
+    }
 
-        @apply w-1/2;
-        @apply sm:w-1/4;
-
-        @apply flex;
-        @apply justify-center;
-
-        @apply text-krukar;
-
-        @apply white-link;
+    .works-link {
+        @apply h-9;
     }
 }

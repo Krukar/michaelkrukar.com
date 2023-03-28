@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 
-import Links from "@Components/Links";
+import Social from "@Components/Social";
+import Works from "@Components/Works";
 
 const Wave = dynamic(() => import("@Components/wave/Wave"), {
     ssr: false,
@@ -12,8 +13,12 @@ const Layout = () => (
             <Wave />
         </div>
 
-        <div className="absolute left-0 right-0 bottom-0 z-10">
-            <Links />
+        <div className="absolute top-9 left-9 z-10">
+            <Social />
+        </div>
+
+        <div className="absolute left-0 right-0 bottom-9 z-10">
+            <Works />
         </div>
     </div>
 );
