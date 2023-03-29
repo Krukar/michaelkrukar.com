@@ -8,7 +8,7 @@ const Layout = ({ children }: any) => {
             <Head>
                 <meta property="og:title" content="Krukar" />
                 <meta property="og:description" content="Full Stack Consultant/New Media Artist" />
-                <meta property="og:image" content="/meta.jpg" />
+                <meta property="og:image" content="https://michaelkrukar.com/meta.jpg" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://michaelkrukar.com" />
