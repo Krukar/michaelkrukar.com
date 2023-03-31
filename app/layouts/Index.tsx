@@ -1,26 +1,33 @@
+import { useState } from "react";
+
 import dynamic from "next/dynamic";
 
+import Play from "@Components/Play";
 import Social from "@Components/Social";
 import Works from "@Components/Works";
 
-const Wave = dynamic(() => import("@Components/wave/Wave"), {
+const Wave = dynamic(() => import("@Components/Wave"), {
     ssr: false,
 });
 
-const Layout = () => (
-    <div>
-        <div className="h-screen bg-dark">
-            <Wave />
-        </div>
+const Layout = () => {
+    const [play, set_play] = useState<boolean>(false);
 
-        <div className="absolute top-9 left-9 z-10">
-            <Social />
-        </div>
+    return (
+        <div className="h-screen py-7 md:py-8 lg:py-9">
+            <div className="gutter h-full flex flex-col justify-between">
+                <div className="flex justify-between items-center">
+                    <Social />
 
-        <div className="absolute left-0 right-0 bottom-9 z-10">
-            <Works />
+                    <Play play={play} set_play={set_play} />
+                </div>
+
+                <Works />
+            </div>
+
+            <Wave play={play} />
         </div>
-    </div>
-);
+    );
+};
 
 export default Layout;

@@ -4,26 +4,23 @@ import ManOfParts from "@Svgs/ManOfParts";
 import TurboaBoard from "@Svgs/TurboBoard";
 
 const Component = () => (
-    <div className="flex flex-wrap gap-y-8">
-        <div className="w-full xs:w-1/2 lg:w-1/4 flex justify-center">
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-7 lg:gap-8">
+        <div className="works-item">
             <a className="works-link" href="https://turboboard.io/" rel="noreferrer" target="_blank">
                 <TurboaBoard />
             </a>
         </div>
-
-        <div className="w-full xs:w-1/2 lg:w-1/4 flex justify-center">
+        <div className="works-item">
             <a className="works-link" href="https://5oz.com/" rel="noreferrer" target="_blank">
                 <FiveOz />
             </a>
         </div>
-
-        <div className="w-full xs:w-1/2 lg:w-1/4 flex justify-center">
+        <div className="works-item">
             <a className="works-link" href="https://ekran.ca/" rel="noreferrer" target="_blank">
                 <Ekran />
             </a>
         </div>
-
-        <div className="w-full xs:w-1/2 lg:w-1/4 flex justify-center">
+        <div className="works-item">
             <a className="works-link" href="https://manofparts.com/" rel="noreferrer" target="_blank">
                 <ManOfParts />
             </a>

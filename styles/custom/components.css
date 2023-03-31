@@ -3,7 +3,18 @@
         @apply h-7;
     }
 
-    .works-link {
-        @apply h-9;
+    .works {
+        &-item {
+            @apply flex;
+            @apply justify-center;
+        }
+
+        &-link {
+            @apply block;
+
+            @apply h-8;
+            @apply md:h-9;
+            @apply lg:h-9;
+        }
     }
 }

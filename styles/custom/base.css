@@ -1,4 +1,8 @@
 @layer base {
+    body {
+        @apply bg-dark;
+    }
+
     a,
     button {
         @apply link--fade;

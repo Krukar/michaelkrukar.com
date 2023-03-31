@@ -10,7 +10,7 @@ const debounce = (func: Function, delay: number) => {
     };
 };
 
-const Component = ({ analyser, data, play }: { analyser: AnalyserNode; data: Float32Array; play: boolean }) => {
+const Component = ({ analyser, data, play }: { analyser: AnalyserNode | null; data: Float32Array; play: boolean }) => {
     const canvas = useRef<HTMLCanvasElement>(null);
     const canvas_context = useRef<CanvasRenderingContext2D | null>(null);
     const frame = useRef<number>(0);
@@ -39,7 +39,7 @@ const Component = ({ analyser, data, play }: { analyser: AnalyserNode; data: Flo
 
         let x = 0;
 
-        if (!canvas.current || !canvas_context.current) return;
+        if (!analyser || !canvas.current || !canvas_context.current) return;
 
         analyser.getFloatFrequencyData(data);
 
@@ -71,7 +71,7 @@ const Component = ({ analyser, data, play }: { analyser: AnalyserNode; data: Flo
         canvas.current.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     }, 100);
 
-    return <canvas ref={canvas} />;
+    return <canvas className="fixed inset-0 z-[-1]" ref={canvas} />;
 };
 
 export default Component;
