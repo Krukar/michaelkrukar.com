@@ -6,12 +6,16 @@ const Layout = ({ children }: any) => {
     return (
         <>
             <Head>
+                <meta name="description" content="Full Stack Consultant/New Media Artist" />
+
                 <meta property="og:title" content="Krukar" />
                 <meta property="og:description" content="Full Stack Consultant/New Media Artist" />
                 <meta property="og:image" content="https://michaelkrukar.com/meta.jpg" />
-                <meta name="twitter:card" content="summary_large_image" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://michaelkrukar.com" />
+                <meta property="og:site_name" content="Krukar" />
+
+                <meta name="twitter:card" content="summary_large_image" />
 
                 <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png" />
                 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
