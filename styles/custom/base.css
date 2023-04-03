@@ -9,5 +9,10 @@
         @apply in-out-smooth;
 
         @apply text-krukar;
+
+        @apply outline-none;
+
+        &:focus {
+        }
     }
 }
