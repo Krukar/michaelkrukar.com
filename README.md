@@ -13,3 +13,7 @@
 **Version 4.0.2**
 
 -   Improved mobile experience
+
+**Version 4.0.3**
+
+-   Implement Google Page Speed suggestions
