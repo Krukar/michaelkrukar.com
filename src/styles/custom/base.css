@@ -1,0 +1,20 @@
+@layer base {
+    body {
+        @apply bg-dark;
+        @apply text-light;
+    }
+
+    a,
+    button {
+        @apply in-out-smooth--slow;
+
+        @apply opacity-link;
+
+        .playing & {
+            @apply opacity-25;
+
+            @apply focus:opacity-100;
+            @apply hover:opacity-100;
+        }
+    }
+}

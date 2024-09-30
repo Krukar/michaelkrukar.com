@@ -1,0 +1,61 @@
+@layer utilities {
+    /*
+		Effects
+	*/
+    .cubic {
+        transition-timing-function: cubic-bezier(0, 0, 0.5, 1);
+    }
+
+    .in-out-smooth {
+        transition-property: all;
+        transition-duration: 0.25s;
+        transition-delay: 0s;
+
+        @apply cubic;
+
+        &--slow {
+            transition-duration: 0.5s;
+        }
+    }
+
+    /*
+		Layout
+	*/
+    .gutter {
+        @apply px-6;
+
+        @apply md:px-7;
+
+        @apply lg:px-8;
+
+        @apply xl:px-9;
+    }
+
+    .gutter-y {
+        @apply py-5;
+
+        @apply md:py-6;
+
+        @apply lg:py-7;
+
+        @apply xl:py-8;
+
+        &--large {
+            @apply py-6;
+
+            @apply md:py-7;
+
+            @apply lg:py-8;
+
+            @apply xl:py-9;
+        }
+    }
+
+    /*
+		Links
+	*/
+    .opacity-link {
+        @apply focus:opacity-50;
+        @apply hover:opacity-50;
+    }
+}

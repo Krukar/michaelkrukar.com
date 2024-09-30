@@ -1,0 +1,11 @@
+@layer components {
+    .canvas {
+        @apply opacity-0;
+
+        @apply in-out-smooth--slow;
+
+        .playing & {
+            @apply opacity-100;
+        }
+    }
+}
