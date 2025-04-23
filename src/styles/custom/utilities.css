@@ -1,0 +1,21 @@
+/*
+    Effects
+*/
+@utility in-out-smooth {
+    transition-property: all;
+    transition-duration: 0.25s;
+    transition-delay: 0s;
+
+    @apply ease-cool;
+}
+
+/*
+    Layout
+*/
+@utility gutter {
+    @apply p-4;
+    @apply sm:p-6;
+    @apply md:p-8;
+    @apply lg:p-10;
+    @apply xl:p-12;
+}

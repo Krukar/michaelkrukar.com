@@ -1,0 +1,38 @@
+@layer components {
+    .ball {
+        @apply block;
+        @apply w-full;
+
+        @apply aspect-square;
+
+        @apply bg-primary;
+
+        @apply rounded-full;
+
+        @apply cursor-pointer;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+        height: 0.25rem;
+        width: 0.25rem;
+        border-radius: 0.375rem;
+        @apply bg-light;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 0.25rem theme(--color-light);
+        border-radius: 0.25rem;
+        @apply bg-light;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        border-radius: 0.25rem;
+        @apply bg-dark;
+    }
+
+    .line {
+        @apply stroke-primary;
+        @apply stroke-2;
+        @apply fill-none;
+    }
+}

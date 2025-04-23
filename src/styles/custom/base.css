@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'Orbitron';
+    src: url('../../../public/fonts/orbitron/orbitron-medium-webfont.woff') format('woff'),
+        url('../../../public/fonts/orbitron/orbitron-medium-webfont.eot') format('eot'),
+        url('../../../public/fonts/orbitron/orbitron-medium-webfont.svg') format('svg'),
+        url('../../../public/fonts/orbitron/orbitron-medium-webfont.ttf') format('truetype');
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi-Variable';
+    src: url('../../../public/fonts/satoshi/Satoshi-Variable.woff2') format('woff2'),
+        url('../../../public/fonts/satoshi/Satoshi-Variable.woff') format('woff'),
+        url('../../../public/fonts/satoshi/Satoshi-Variable.ttf') format('truetype');
+    font-weight: 300 900;
+    font-display: swap;
+    font-style: normal;
+}
+
+@layer base {
+    body {
+        @apply bg-dark;
+        @apply text-light;
+    }
+
+    ::selection {
+        @apply bg-primary;
+        @apply text-light;
+    }
+
+    h1,
+    h2,
+    h3 {
+        @apply font-satoshi;
+    }
+
+    h1 {
+        @apply font-black;
+
+        @apply text-6xl;
+        @apply sm:text-7xl;
+        @apply md:text-8xl;
+        @apply lg:text-9xl;
+        @apply xl:text-10xl;
+    }
+
+    h2 {
+        @apply text-lg;
+        @apply sm:text-xl;
+        @apply md:text-2xl;
+        @apply lg:text-3xl;
+        @apply xl:text-4xl;
+    }
+
+    h3 {
+        @apply text-xs;
+        @apply sm:text-sm;
+        @apply md:text-base;
+        @apply lg:text-lg;
+        @apply xl:text-xl;
+
+        @apply font-orbitron;
+
+        @apply tracking-widest;
+    }
+
+    a {
+        @apply focus:text-primary;
+        @apply hover:text-primary;
+
+        @apply focus:outline-none;
+
+        @apply in-out-smooth;
+    }
+}
