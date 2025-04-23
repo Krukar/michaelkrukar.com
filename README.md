@@ -4,9 +4,10 @@ Personal Portfolio
 
 ## Release Notes
 
-**Version 2.0.0**
+**Version 1.0.1**
 
-- Newer Version Launch
+- Added favicon
+- Added metadata
 
 **Version 1.0.0**
 
