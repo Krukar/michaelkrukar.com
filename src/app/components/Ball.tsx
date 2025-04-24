@@ -49,5 +49,5 @@ export default function Component({ ref }: { ref: RefObject<HTMLDivElement | nul
         });
     };
 
-    return <button className="ball" onClick={handle_click} />;
+    return <button aria-label="Click to scroll down" className="ball" onClick={handle_click} />;
 }

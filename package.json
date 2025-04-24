@@ -1,7 +1,6 @@
 {
   "name": "michaelkrukar.com",
-  "version": "1.0.1",
-  "private": true,
+  "version": "1.0.2",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
