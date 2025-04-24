@@ -19,12 +19,12 @@ export default function Component() {
                         <h2>ハッカー</h2>
                     </div>
 
-                    <div className="w-1/10">
+                    <div className="w-1/10 hidden xs:block">
                         <div className="mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6">
                             <Squares />
                         </div>
 
-                        <div>
+                        <div className="flex justify-center">
                             <Ball ref={ref} />
                         </div>
                     </div>

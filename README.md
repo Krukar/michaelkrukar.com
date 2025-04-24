@@ -4,6 +4,10 @@ Personal Portfolio
 
 ## Release Notes
 
+**Version 1.0.3**
+
+- Added max width to red ball
+
 **Version 1.0.2**
 
 - Fixed accessibility issue on button

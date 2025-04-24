@@ -2,6 +2,7 @@
     .ball {
         @apply block;
         @apply w-full;
+        @apply max-w-40;
 
         @apply aspect-square;
 
