@@ -4,6 +4,10 @@ Personal Portfolio
 
 ## Release Notes
 
+**Version 1.0.4**
+
+- Changed to active projects
+
 **Version 1.0.3**
 
 - Added max width to red ball

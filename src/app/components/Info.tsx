@@ -8,11 +8,11 @@ export default function Component() {
                 <div className="mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24">
                     <h1 className="uppercase">Krukar</h1>
 
-                    <h2>New Media Artist / Full Stack Engineer</h2>
+                    <h2>Consultant</h2>
                 </div>
 
                 <div className="flex-1">
-                    <h3 className="mb-4">Past Projects</h3>
+                    <h3 className="mb-5">Active Projects</h3>
 
                     <Work />
                 </div>
