@@ -4,6 +4,9 @@ Personal Portfolio
 
 ## Release Notes
 
+**Version 1.0.5**
+- Updated to Next v16.0.7 for security reasons
+
 **Version 1.0.4**
 
 - Changed to active projects
