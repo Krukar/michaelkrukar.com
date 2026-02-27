@@ -4,6 +4,12 @@ Personal Portfolio
 
 ## Release Notes
 
+**Version 1.0.6**
+- Updated resume
+- Changed Made in Canada to Made in Toronto
+- Added Bluesky and Letterboxd social media links
+- Changed Consultant to Design Engineer
+
 **Version 1.0.5**
 - Updated to Next v16.0.7 for security reasons
 

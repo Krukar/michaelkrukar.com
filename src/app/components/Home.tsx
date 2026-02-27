@@ -35,7 +35,7 @@ export default function Component() {
                 </div>
 
                 <div>
-                    <h3 className="text-center">Made in Canada</h3>
+                    <h3 className="text-center">Made in Toronto</h3>
                 </div>
             </div>
         </div>
