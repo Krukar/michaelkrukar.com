@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
     title: 'Krukar',
@@ -16,7 +17,10 @@ export default function RootLayout({
         <html lang="en">
             <link rel="icon" href="/favicon.ico" sizes="any" />
 
-            <body className="custom-scrollbar">{children}</body>
+            <body className="custom-scrollbar">
+                {children}
+                <Analytics />
+            </body>
         </html>
     );
 }
