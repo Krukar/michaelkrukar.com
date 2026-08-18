@@ -1,6 +1,6 @@
 {
     "name": "michaelkrukar.com",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "scripts": {
         "dev": "next dev --turbopack",
         "build": "next build",

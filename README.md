@@ -4,6 +4,9 @@ Personal Portfolio
 
 ## Release Notes
 
+**Version 1.0.7**
+- Added Burdifilek
+
 **Version 1.0.6**
 - Updated resume
 - Changed Made in Canada to Made in Toronto
